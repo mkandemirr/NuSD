@@ -14,47 +14,51 @@ VII.  PANDA
                   The package structure:
 =========================*****================================
 
-include/               : header files
+shared/include/ : It includes common header files for all detector types
 
-src/                   : source files
+shared/src/     : It includes common source files for all detector types
 
-data/                  : It includes experimental input data for optical photon simulation. For example, scintillator      emissionspectrum,refractive index, absorption length, photosensor quantum efficiency, reflector reflectivity. For detailed information, read section 2.3 of the corresponding article
+detectors/ 			: it includes detector construction files for each detector type.
 
-macros/                : It includes a macro file for each detector setup and several macros for simulation settings. A macro file is a collection of user interface commands. 
+data/   : It includes the reflectivity spectrum of the reflector and the quantum efficiency spectrum of the photosensor to be used in the construction of detectors. Users can change them with their own data.
 
-neutrinoSpectrum/      : It contains a root file in which two histograms are written: reactor anti-neutrino emission spectrum and positron scattering angle. These two histograms are used to determine the initial values of the primary particles in inverse beta decay events. 
+OPSimTool/  : OPSimTool is a custom library that significantly simplifies the implementation process of optical components in Geant4. It allows users to create portable, reusable materials build code while working on their own projects. The directory named EljenScintillators in this package is created based on this library. This library is independent of NuSD and anyone performing optical photon simulations with Geant4 can utilize it.
 
-analysis/              : It includes many Root macro files for the analysis of the simulation data. For example, neutron capture efficiency, anti-neutrino detection efficiency, neutron capture time, and light collection efficiency. 
+EljenScintillators / : This directory includes the implementation of some commercially available Eljen scintillators. This library is independent of NuSD. It uses OPSimTool library. Those who wish to use these scintillators in their projects should copy the OPSimTool directory together with this directory into their own project source directory. 
 
-output/                : If you activate the CREATE_ROOT_FILE preprocessor macro in NuSD_config.h file, the root files generated from the simulation are located here.                                                
+NuSDMaterials/ : This includes some special materials used in NuSD. It utilizes the OPSimTool library for the creation of material build classes. 
 
-testRun/               : It includes two sample runs of NuSD.                        
+macros/   : It includes a macro file for each detector setup and several macros for simulation settings. A macro file is a collection of user interface commands. 
 
-CMakeList              : It contains commands which describe how to build the NuSD.
+neutrinoSpectrum/   : It contains a root file in which two histograms are written: reactor anti-neutrino emission spectrum and positron scattering angle. These two histograms are used to determine the initial values of the primary particles in inverse beta decay events. 
 
-NuSD.cc                : It contains main() for the application.
+analysis/  : It includes many Root macro files for the analysis of the simulation data. For example, neutron capture efficiency, anti-neutrino detection efficiency, neutron capture time, and light collection efficiency. 
 
-NuSD_config.h.in       : It includes several preprocessor macros to conditionally compile certain parts of the program. This is the main configuration file of NuSD. 
+output/    : If you activate the CREATE_ROOT_FILE preprocessor macro in NuSD_config.h file, the root files generated from the simulation are located here.                                                
+
+testRun/   : It includes two sample runs of NuSD.                        
+
+CMakeList  : It contains commands that describe how to build the NuSD.
+
+NuSD.cc    : It contains main() for the application.
+
+NuSD_config.h.in  : It includes several preprocessor macros to conditionally compile certain parts of the program. This is the main configuration file of NuSD. 
 
 
                   System requirements:
 =========================*****================================
 
 Tested on:
-    Os: Linux (Ubuntu 18.04.5 LTS )
-    Architecture: x86_64
-    Compiler: gcc 7.5.0
-   
-Mandatory:
-   - CLHEP (recommended version 2.4.1.3 or greater)
-   - Geant4.10.0.6 or greater 
-   - ROOT 6.20.0.0 or greater
-   - CMake version 3.10.2 or greater
 
-Optional: 
-   - OpenGL / QT (for interactive visualiser)
-   
-   
+	Os: Linux (Ubuntu 22.04.2 LTS )
+	Architecture: x86_64
+	Compiler: gcc 11.3.0
+
+	CLHEP 2.4.6.4 
+	Geant4 11.1.1 
+	ROOT 6.28.02 
+	CMake 3.26.0 
+
                   How to run the NuSD application?   
 =========================*****================================   
 Step 1 
@@ -72,13 +76,14 @@ Step 3
   $ mkdir NuSD-build
 
 Step 4
-  Now go inside this build directory and run CMake to generate the Makefiles needed to build the NuSD application. Two arguments are passed to CMake. The first argument points CMake to our install of Geant4. Specifically, it is the directory holding the   
-Geant4Config.cmake file that Geant4 installs to help CMake find and use Geant4. It is assumed that you have already installed Geant4 in your home area under, for illustration only, /home/you/geant4-install. The second argument to CMake is the path to the source directory of the application we want to build. Here it’s just the NuSD directory as indicated earlier. CMake will now run to configure the build and generate Makefiles.
+  Now go inside this build directory and run CMake to generate the Makefiles needed to build the NuSD application. Select the detector type you want to study using the flag "DETECTOR_NAME". Suppose you want to study with CHANDLER:   
   $ cd NuSD-build
-  $ cmake -DGeant4_DIR=/home/you/geant4-install/lib64/Geant4-G4VERSION $HOME/NuSD 
+  $ cmake -DDETECTOR_NAME=CHANDLER -S ../NuSD -B . 
+  
+  (available detector name = SWEANY, CHANDLER, SOLID, NULAT, PROSPECT, HSP, PANDA)
 
 Step 5
- Step 4 generates a configuration file in the build directory named "NuSD_config.h". Open this file and select the desired detector type from the list you want to study, and configure some initial simulation settings (for detail read section 2.1 in the respective articles).
+ Step 4 generates a configuration file in the build directory named "NuSD_config.h". Open this file and configure some initial simulation settings (for detail read section 2.1 in the respective articles).
 
 Step 6
   With the Makefile available, we can now build by simply running make: 
@@ -101,8 +106,7 @@ Step 7
     ./NuSD   
 
 Step 8
-  If you want to change the selected detector type or change any settings in the NuSD_config.h file, return to step 5 and 
-  follows the next steps. 
+  If you want to change the selected detector type, return to step 4 and follows the next steps. 
    
                         Contacts 
 =========================*****================================
