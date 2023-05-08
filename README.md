@@ -96,18 +96,15 @@ Mustafa Kandemir (mustafa.kandemir@erdogan.edu.tr)
 
 ## CITATION
 
-@article{KANDEMIR2022108387,
-title = {NuSD: A Geant4 based simulation framework for segmented anti-neutrino detectors},
-journal = {Computer Physics Communications},
-volume = {277},
-pages = {108387},
-year = {2022},
-issn = {0010-4655},
-doi = {https://doi.org/10.1016/j.cpc.2022.108387},
-url = {https://www.sciencedirect.com/science/article/pii/S0010465522001060},
-author = {Mustafa Kandemir and Emrah Tiras and Vincent Fischer},
-keywords = {NuSD, Geant4 based program, Segmented scintillation detector, Reactor anti-neutrino, Inverse beta decay simulation, Neutrino interaction, Near-field reactor monitoring},
-abstract = {NuSD: Neutrino Segmented Detector is a Geant4-based user application that simulates inverse beta decay events in a variety of segmented scintillation detectors developed by different international collaborations. This simulation framework uses a combination of cross-programs and libraries including Geant4, ROOT and CLHEP developed and used by the high energy physics community. It will enable the neutrino physics community to simulate and study neutrino interactions within different detector concepts using a single program. In addition to neutrino simulations in segmented detectors, this program can also be used for various research projects utilizing scintillation detectors for different physics applications.
-Program summary
-Program title: NuSD CPC Library link to program files: https://doi.org/10.17632/7vgfhxbzdv.1 Licensing provisions: GNU General Public License 3 Programming language: C++ External routines/libraries: Geant4, CLHEP, ROOT, CMAKE Nature of problem: Considerable effort has been spent on small anti-neutrino detectors for various purposes by different collaborations around the globe, but there is not an interactive and user-friendly joint-simulation framework. Solution method: To fulfill the need in the field, we developed a simulation framework to combine various segmented detector technologies. This package code will be open to public to let people simulate and test different detector concepts easily. Here, we categorized segmented anti-neutrino detectors as homogeneous and inhomogeneous detectors. Homogeneous detectors consist of PROSPECT, NULAT, and HSP type detectors. Inhomogeneous detectors consist of PANDA type detectors with single scintillator modules. CHANDLER, SOLID and SWEANY detector types are characterized as composite scintillator modules.}
+@article{KANDEMIR2022108387, \
+title = {NuSD: A Geant4 based simulation framework for segmented anti-neutrino detectors}, \
+journal = {Computer Physics Communications}, \
+volume = {277}, \
+pages = {108387}, \
+year = {2022}, \
+issn = {0010-4655}, \
+doi = {https://doi.org/10.1016/j.cpc.2022.108387 }, \
+url = {https://www.sciencedirect.com/science/article/pii/S0010465522001060 }, \
+author = {Mustafa Kandemir and Emrah Tiras and Vincent Fischer}, \
+keywords = {NuSD, Geant4 based program, Segmented scintillation detector, Reactor anti-neutrino, Inverse beta decay simulation, Neutrino interaction, Near-field reactor monitoring} \
 }
