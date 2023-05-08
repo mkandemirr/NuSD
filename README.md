@@ -47,7 +47,7 @@ Tested on:
 * ROOT 6.28.02 
 * CMake 3.26.0 
 
-## How to run the NuSD application?   
+## How to run the NuSD?   
  1. Go in your home directory and create a subdirectory named NuSD
   ```bash
   cd ~
