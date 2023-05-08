@@ -1,0 +1,32 @@
+# Macro file for the initialization of NuSD
+# Set some default verbose
+/control/saveHistory
+/control/verbose 2
+/run/verbose 2
+/tracking/verbose -1
+
+# Sends G4cout stream to a per-thread file
+#/control/cout/setCoutFile fileName
+
+#hide worker prints. buffer the output from each thread at a time, 
+#so that the output of each thread is grouped and printed at the #end of the job
+#/control/cout/useBuffer false
+
+#to limit the output from threads to one selected thread only:
+#/control/cout/ignoreThreadsExcept 0
+
+#to redirect the output from threads in a file:
+#/control/cout/setCoutFile coutFileName
+#/control/cout/setCerrFile cerrFileName
+
+#/process/optical/verbose 2
+
+/run/printProgress 1000
+
+# Change the default number of threads (in multi-threaded mode)
+#/run/numberOfThreads 4
+
+
+
+
+

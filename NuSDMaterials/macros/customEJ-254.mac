@@ -1,0 +1,12 @@
+#CustomEJ-254 MatProp
+/matPropTable/CustomEJ-254/addProperty SCINTILLATIONCOMPONENT1 NuSDMaterials/data/customEJ-254/scntComp1.txt eV unitless
+/matPropTable/CustomEJ-254/addProperty RINDEX NuSDMaterials/data/customEJ-254/refIndex.txt eV unitless false false 1.58
+/matPropTable/CustomEJ-254/addProperty ABSLENGTH NuSDMaterials/data/customEJ-254/absLength.txt eV cm false false 50 
+
+/matPropTable/CustomEJ-254/addConstProperty SCINTILLATIONYIELD 10 1/MeV #7500
+/matPropTable/CustomEJ-254/addConstProperty SCINTILLATIONYIELD1 1 
+/matPropTable/CustomEJ-254/addConstProperty SCINTILLATIONTIMECONSTANT1 1.51 ns
+/matPropTable/CustomEJ-254/addConstProperty SCINTILLATIONRISETIME1 0.85 ns
+/matPropTable/CustomEJ-254/addConstProperty RESOLUTIONSCALE 1.0
+
+

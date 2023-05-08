@@ -1,0 +1,5 @@
+#Grease MatProp
+/matPropTable/Grease/addProperty RINDEX NuSDMaterials/data/grease/refIndex.txt eV unitless 
+/matPropTable/Grease/addProperty ABSLENGTH NuSDMaterials/data/grease/absLength.txt eV cm 
+
+

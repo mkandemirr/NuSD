@@ -1,0 +1,5 @@
+#Fep MatProp
+/matPropTable/Fep/addProperty RINDEX NuSDMaterials/data/fep/refIndex.txt eV unitless 
+/matPropTable/Fep/addProperty ABSLENGTH NuSDMaterials/data/fep/absLength.txt eV cm 
+
+

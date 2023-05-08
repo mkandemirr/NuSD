@@ -1,0 +1,18 @@
+#common user interface optical readout commands for all detector types.
+
+/NuSD/geometry/opticalReadOut/isAttachedBothEnd false
+/NuSD/geometry/opticalReadOut/photoCathodeRadius 2.3 cm
+/NuSD/geometry/opticalReadOut/isLightGuideOn false
+/NuSD/geometry/opticalReadOut/lightGuideLength 4 cm
+/NuSD/geometry/opticalReadOut/lightGuidePmtEndDimension 2 3 1 cm
+/NuSD/geometry/opticalReadOut/isLgBinderOn true
+/NuSD/geometry/opticalReadOut/isPSBinderOn true
+/NuSD/geometry/opticalReadOut/lgBinderLength 10 mm
+/NuSD/geometry/opticalReadOut/psBinderLength 10 mm
+
+
+
+
+
+
+

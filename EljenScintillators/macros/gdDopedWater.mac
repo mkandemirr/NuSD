@@ -1,0 +1,7 @@
+#GdDopedWater MatProp
+
+/matPropTable/GdDopedWater/addProperty RINDEX OPSim/materials/data/gdDopedWater/refIndex.txt eV unitless
+/matPropTable/GdDopedWater/addProperty ABSLENGTH OPSim/materials/data/gdDopedWater/absLength.txt eV mm
+/matPropTable/GdDopedWater/addProperty RAYLEIGH OPSim/materials/data/gdDopedWater/rsLength.txt nm mm
+
+

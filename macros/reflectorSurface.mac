@@ -1,0 +1,8 @@
+#reflector surface 
+/NuSD/geometry/surface/reflector/isReflectivityDependsEnergy false #if it is true, the command below will be refused.
+/NuSD/geometry/surface/reflector/reflectivity 0.96 #fixed value for all photon energies.
+
+
+
+
+

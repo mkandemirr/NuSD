@@ -1,0 +1,174 @@
+# Use this open statement to create an OpenGL view:
+
+/vis/open OGL 600x600-0+0
+
+#
+# Use this open statement to create a .prim file suitable for
+# viewing in DAWN:
+#/vis/open DAWNFILE
+#
+# Use this open statement to create a .heprep file suitable for
+# viewing in HepRApp:
+#/vis/open HepRepFile
+#
+# Use this open statement to create a .wrl file suitable for
+# viewing in a VRML viewer:
+#/vis/open VRML2FILE
+#
+
+# Disable auto refresh and quieten vis messages whilst scene and
+# trajectories are established:
+
+
+# Disable auto refresh and quieten vis messages whilst scene and
+# trajectories are established:
+/vis/viewer/set/autoRefresh false
+/vis/verbose errors
+
+# Draw geometry:
+/vis/drawVolume
+# Specify view angle: 90 360
+/vis/viewer/set/viewpointThetaPhi 90 360  
+
+
+# Specify zoom value:
+/vis/viewer/zoom 2.4
+#
+
+#bu satırla görüntüyü kaydetmek için
+#/vis/open OGLSX 
+# Specify view angle:
+#/vis/viewer/set/viewpointThetaPhi 120 150
+# Camera setting
+#/vis/drawVolume 
+#/vis/viewer/flush
+# set print mode to vectored
+#/vis/ogl/set/printMode vectored
+# set print size larger than screen
+#/vis/ogl/set/printSize 2000 2000
+# print
+#/vis/ogl/printEPS
+
+# Specify style (surface or wireframe):
+#/vis/viewer/set/style wireframe
+
+#on-off axis
+# Draw coordinate axes:
+#/vis/scene/add/axes 0 0 0 50 cm
+#
+
+#important!!!!!Use this to get image
+# To get nice view
+#sırasıyla parametler LogicalVolumeName depth true/false
+#/vis/geometry/set/visibility WorldLogic 0 false
+#/vis/geometry/set/visibility UnitLogic 0 false
+#/vis/geometry/set/forceSolid NuScntLogic 0 true
+
+#/vis/geometry/set/forceSolid NeutronScntLogic 0 true
+
+#/vis/geometry/set/visibility PmtReadoutUnitLogic 0 false
+#/vis/geometry/set/visibility DetLogic 0 false
+
+#hepsini wire frame yapıyor!! optic fotonların davranışını incelerken bunu aç!!
+ #/vis/geometry/set/forceWireframe
+ #/vis/geometry/set/forceSolid PmtReadOutUnit 0 false
+ #/vis/geometry/set/forceSolid NuScntLogic 0 true
+ #/vis/geometry/set/forceSolid LightGuideLogic 0 true
+ #/vis/geometry/set/forceSolid PSBinderLogic 0 true
+ #/vis/geometry/set/forceSolid LgBinderLogic 0 true
+ #/vis/geometry/set/forceSolid PhotonDetLogic 0 true
+
+
+# specific to SOLID detector 
+#/vis/geometry/set/visibility SolidDetLogic 0 false
+#/vis/geometry/set/visibility SiPMLogic 0 false
+#/vis/geometry/set/forceSolid Clad2Logic 0 false
+#/vis/geometry/set/forceSolid Clad1Logic 0 false
+#/vis/geometry/set/forceSolid CoreLogic 0 true
+#/vis/geometry/set/forceSolid GrooveLogic 0 false
+
+# Draw smooth trajectories at end of event, showing trajectory points
+
+/vis/scene/add/trajectories smooth
+# test ismini ben verdim default değeri drawByCharge-0
+/vis/modeling/trajectories/create/drawByCharge test
+
+#default değer değiştiriliyor..+1 yükler red, -1 yükler blue,yüksüzler white gözüküyor
+/vis/modeling/trajectories/test/set 1 red
+/vis/modeling/trajectories/test/set -1 blue
+/vis/modeling/trajectories/test/set 0 white
+
+
+#bu satır üst satırların gecerliliğini kaldırıyor
+/vis/modeling/trajectories/create/drawByParticleID
+
+/vis/modeling/trajectories/drawByParticleID-0/set e+ magenta
+/vis/modeling/trajectories/drawByParticleID-0/set neutron green
+/vis/modeling/trajectories/drawByParticleID-0/set triton brown
+/vis/modeling/trajectories/drawByParticleID-0/set alpha blue
+/vis/modeling/trajectories/drawByParticleID-0/set gamma red
+/vis/modeling/trajectories/drawByParticleID-0/set opticalphoton white
+
+
+# as markers 2 pixels wide:
+/vis/modeling/trajectories/drawByParticleID-0/default/setDrawStepPts true
+/vis/modeling/trajectories/drawByParticleID-0/default/setStepPtsSize 4
+
+
+#ne 1 ile 4 arasında değer alıyor..1 ve 4 dahil default 2
+/tracking/storeTrajectory 1
+
+
+# (if too many tracks cause core dump => /tracking/storeTrajectory 0)
+
+#default 50000
+/vis/ogl/set/displayListLimit 1000000
+ 
+
+#
+# Draw hits at end of event:
+/vis/scene/add/hits
+#
+# To draw only gammas:
+#/vis/filtering/trajectories/create/particleFilter
+#/vis/filtering/trajectories/particleFilter-0/add gamma
+#
+# To invert the above, drawing all particles except gammas,
+# keep the above two lines but also add:
+#/vis/filtering/trajectories/particleFilter-0/invert true
+#
+
+
+
+
+
+
+# Many other options are available with /vis/modeling and /vis/filtering.
+# For example, to select colour by particle ID:
+#/vis/modeling/trajectories/create/drawByParticleID
+#/vis/modeling/trajectories/drawByParticleID-0/set e- blue
+#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# To superimpose all of the events from a given run:
+#/vis/scene/endOfEventAction accumulate
+#
+# Re-establish auto refreshing and verbosity:
+/vis/viewer/set/autoRefresh true
+/vis/verbose warnings
+
+#
+# For file-based drivers, use this to create an empty detector view:
+#/vis/viewer/flush

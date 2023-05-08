@@ -1,0 +1,44 @@
+#detector main volume parameters
+
+/NuSD/geometry/numberOfSegmentAlongX 2 #16
+/NuSD/geometry/numberOfSegmentAlongY 3 #9
+/NuSD/geometry/numberOfSegmentAlongZ 4 #16
+
+/NuSD/geometry/neutrinoScntDimensions 5 5 5 cm
+
+/NuSD/geometry/neutronScntThickness 0.32 mm #0.32 mm
+/NuSD/geometry/optBarrierThickness 2 um # 2 um
+/NuSD/geometry/reflectorThickness 186 um # 186 um
+
+#fiber property
+#one of the dimension will be ignored depeding on the placed position of fibers
+/NuSD/geometry/fiber/coreSizeX 3 mm # 3mm
+/NuSD/geometry/fiber/coreSizeY 3 mm # 3mm
+/NuSD/geometry/fiber/coreSizeZ 3 mm # 3mm
+
+/NuSD/geometry/fiber/clad1Thickness 0.5 mm #0.5 mm
+/NuSD/geometry/fiber/clad2Thickness 0.5 mm #0.5 mm
+/NuSD/geometry/fiber/gapThickness   1. mm  # 1 mm
+
+/NuSD/geometry/fiber/grooveDistanceToWall 0.0001 mm #0.0001 mm
+/NuSD/geometry/fiber/distanceBetweenGrooves 0.0001 mm #0.0001 mm
+
+/NuSD/geometry/isOpticalReadoutOn true
+ 
+#detector optical surface parameters 
+/NuSD/geometry/opticalReadOut/isAttachedBothEnd true
+/NuSD/geometry/opticalReadOut/isPSBinderOn true
+/NuSD/geometry/opticalReadOut/psBinderLength 1 mm
+
+/NuSD/geometry/opticalReadOut/mppcSizeX 3 mm #adjust according to core size
+/NuSD/geometry/opticalReadOut/mppcSizeY 3 mm
+/NuSD/geometry/opticalReadOut/mppcSizeZ 3 mm
+
+/control/execute macros/reflectorSurface.mac
+/control/execute macros/photoSensorSurface.mac
+
+# Initialize kernel
+/run/initialize
+#/control/execute macros/genericPrimary.mac
+
+

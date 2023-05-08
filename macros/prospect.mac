@@ -1,0 +1,42 @@
+
+#detector main volume parameters
+/NuSD/geometry/numberOfSegmentAlongX 6 #6
+/NuSD/geometry/numberOfSegmentAlongY 7 #7
+/NuSD/geometry/numberOfSegmentAlongZ 1 #1
+
+/NuSD/geometry/neutrinoScntDimensions 14.5 14.5 117.6 cm #14.5 14.5 117.6 cm
+/NuSD/geometry/optBarrierThickness 51 um #51 um
+/NuSD/geometry/liquidTankThickness 1 cm # 1 cm
+/NuSD/geometry/reflectorThickness 0.1 mm # 0.1 mm
+
+/NuSD/geometry/isOpticalReadoutOn true
+ 
+#detector optical surface parameters 
+/NuSD/geometry/opticalReadOut/isAttachedBothEnd true
+/NuSD/geometry/opticalReadOut/isPSBinderOn false
+/NuSD/geometry/opticalReadOut/psBinderLength 1 mm
+
+/NuSD/geometry/opticalReadOut/photoCathodeRadius 6.35 cm # 5 inch=12.7 cm dia. pmts
+
+/NuSD/geometry/opticalReadOut/isLightGuideOn true
+/NuSD/geometry/opticalReadOut/lightGuideLength 4 cm
+
+/NuSD/geometry/opticalReadOut/lightGuidePmtEndDimension 12.7 12.7 12.7 cm #fit it to ps
+/NuSD/geometry/opticalReadOut/isLgBinderOn false
+/NuSD/geometry/opticalReadOut/lgBinderLength 1 mm
+
+#reflector surface 
+/NuSD/geometry/surface/reflector/isReflectivityDependsEnergy false #if it is true, the command below will be refused.
+/NuSD/geometry/surface/reflector/reflectivity 0.96 #fixed value for all photon energies.
+
+#photoSensor surface
+/NuSD/geometry/surface/photoCathode/isQuantumEfficiencyDependsEnergy false #if it is true, the command below will be refused.
+/NuSD/geometry/surface/photoCathode/quantumEfficiency 0.25  #fixed value for all photon energies.
+
+#/NuSD/physics/addPackage QGSP_BIC_HP #QGSP_BIC_HP QGSP_BERT_HP FTFP_BERT_HP
+#/NuSD/physics/isOpticalPhysicsOn false
+
+# Initialize kernel
+/run/initialize
+#/control/execute macros/genericPrimary.mac
+

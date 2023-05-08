@@ -1,0 +1,9 @@
+
+# in interactive session
+/control/execute macros/common.mac
+
+#detector main volume parameters
+/control/execute macros/prospect.mac
+
+# Visualization setting
+/control/execute macros/vis.mac

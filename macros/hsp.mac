@@ -1,0 +1,39 @@
+
+#detector main volume parameters
+/NuSD/geometry/numberOfSegmentAlongX 11 #11 must be odd
+
+/NuSD/geometry/neutrinoScntDimensions 0 0 120 cm #120 cm
+/NuSD/geometry/optBarrierThickness 51 um # 51 um
+/NuSD/geometry/nuScntSideLength 6 cm # 6 cm
+/NuSD/geometry/reflectorThickness 0.1 mm #0.1 mm
+/NuSD/geometry/liquidTankThickness 1 cm # 1 cm
+
+/NuSD/geometry/isOpticalReadoutOn true
+
+/NuSD/geometry/opticalReadOut/isAttachedBothEnd true
+/NuSD/geometry/opticalReadOut/isPSBinderOn false
+/NuSD/geometry/opticalReadOut/psBinderLength 1 mm
+
+/NuSD/geometry/opticalReadOut/psTanDisToOuterSur 35 mm # 0.5*70
+
+/NuSD/geometry/opticalReadOut/isLightGuideOn false
+/NuSD/geometry/opticalReadOut/lightGuideLength 4 cm
+/NuSD/geometry/opticalReadOut/isLgBinderOn false
+/NuSD/geometry/opticalReadOut/lgBinderLength 1 mm
+
+
+#reflector surface 
+/NuSD/geometry/surface/reflector/isReflectivityDependsEnergy false #if it is true, the command below will be refused.
+/NuSD/geometry/surface/reflector/reflectivity 0.96 #fixed value for all photon energies.
+
+
+#photoSensor surface
+/NuSD/geometry/surface/photoCathode/isQuantumEfficiencyDependsEnergy false #if it is true, the command below will be refused.
+/NuSD/geometry/surface/photoCathode/quantumEfficiency 0.25  #fixed value for all photon energies.
+
+
+# Initialize kernel
+/run/initialize
+#/control/execute macros/genericPrimary.mac
+
+

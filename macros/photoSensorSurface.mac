@@ -1,0 +1,3 @@
+#photoSensor surface
+/NuSD/geometry/surface/photoCathode/isQuantumEfficiencyDependsEnergy false #if it is true, the command below will be refused.
+/NuSD/geometry/surface/photoCathode/quantumEfficiency 0.25  #fixed value for all photon energies.

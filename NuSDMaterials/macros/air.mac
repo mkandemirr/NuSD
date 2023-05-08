@@ -1,0 +1,5 @@
+#Air MatProp
+/matPropTable/Air/addProperty RINDEX NuSDMaterials/data/air/refIndex.txt eV unitless false false 1.0
+/matPropTable/Air/addProperty ABSLENGTH NuSDMaterials/data/air/absLength.txt eV cm false false 300 
+
+

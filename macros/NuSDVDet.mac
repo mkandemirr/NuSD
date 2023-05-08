@@ -1,0 +1,11 @@
+
+#Common user interface commands for all detector types
+/NuSD/geometry/numberOfSegmentAlongX 1
+/NuSD/geometry/numberOfSegmentAlongY 1
+/NuSD/geometry/numberOfSegmentAlongZ 1
+
+/NuSD/geometry/neutrinoScntDimensions 6.2 6.2 6.2 cm
+
+
+
+

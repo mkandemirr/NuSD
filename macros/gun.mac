@@ -1,0 +1,7 @@
+#primaryGun. works after /run/initialize command
+/NuSD/gun/isRandomInitPos false
+/NuSD/gun/eventInitialPositon 0 0 0 cm
+
+
+
+

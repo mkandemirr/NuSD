@@ -1,0 +1,5 @@
+#Cement MatProp
+/matPropTable/Cement/addProperty RINDEX NuSDMaterials/data/cement/refIndex.txt eV unitless 
+/matPropTable/Cement/addProperty ABSLENGTH NuSDMaterials/data/cement/absLength.txt eV cm 
+
+

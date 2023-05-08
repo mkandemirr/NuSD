@@ -1,0 +1,7 @@
+
+#common user interface commands for composite detector types
+/NuSD/geometry/neutronScntThickness 0.32 mm
+/NuSD/geometry/optBarrierThickness 0.15 mm
+
+
+

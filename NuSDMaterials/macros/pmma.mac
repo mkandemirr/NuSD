@@ -1,0 +1,5 @@
+#Pmma MatProp
+/matPropTable/Pmma/addProperty RINDEX NuSDMaterials/data/pmma/refIndex.txt eV unitless 
+/matPropTable/Pmma/addProperty ABSLENGTH NuSDMaterials/data/pmma/absLength.txt eV cm 
+
+

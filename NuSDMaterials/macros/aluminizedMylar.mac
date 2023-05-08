@@ -1,0 +1,6 @@
+#AluminizedMylar MatProp
+/matPropTable/AluminizedMylar/addProperty REFLECTIVITY NuSD/materials/data/aluminizedMylar/reflectivity.txt eV unitless false false 1.0
+
+/matPropTable/AluminizedMylar/addProperty EFFICIENCY NuSD/materials/data/aluminizedMylar/efficiency.txt eV unitless false false 0.0
+
+

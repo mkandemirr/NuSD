@@ -1,0 +1,13 @@
+#primaryGun. works after /run/initialize command
+/NuSD/gun/isRandomInitPos true
+/NuSD/gun/eventInitialPositon 0 0 0 cm
+
+/NuSD/gun/useNeutrinoSpectrum true
+/NuSD/gun/positronMomentumDirection 0 0 1
+/NuSD/gun/neutronMomentumDirection 0 1 0
+/NuSD/gun/positronEnergy 3 MeV
+/NuSD/gun/neutronEnergy 1 keV
+
+
+
+

@@ -1,0 +1,5 @@
+#FluorinatedAcrylic MatProp
+/matPropTable/FluorinatedAcrylic/addProperty RINDEX NuSDMaterials/data/fluorinatedAcrylic/refIndex.txt eV unitless 
+/matPropTable/FluorinatedAcrylic/addProperty ABSLENGTH NuSDMaterials/data/fluorinatedAcrylic/absLength.txt eV cm 
+
+

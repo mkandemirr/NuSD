@@ -1,0 +1,6 @@
+#Polystyrene MatProp
+/matPropTable/Polystyrene/addProperty WLSCOMPONENT NuSDMaterials/data/polystyrene/wlsComp.txt eV unitless
+/matPropTable/Polystyrene/addProperty RINDEX NuSDMaterials/data/polystyrene/refIndex.txt eV unitless false false 1.60
+/matPropTable/Polystyrene/addProperty WLSABSLENGTH NuSDMaterials/data/polystyrene/wlsAbsLength.txt eV cm 
+
+/matPropTable/Polystyrene/addConstProperty WLSTIMECONSTANT 12 ns
